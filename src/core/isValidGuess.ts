@@ -3,5 +3,18 @@ export function isValidGuess(
   length: number,
   base: number,
 ): boolean {
-  return false;
+  if (guess.length !== length) {
+    return false;
+  }
+  if (new Set(guess.toUpperCase()).size !== length) {
+    return false;
+  }
+  for (const char of guess) {
+    const digitValue = parseInt(char, base);
+    if (isNaN(digitValue)) {
+      return false;
+    }
+  }
+
+  return true;
 }
