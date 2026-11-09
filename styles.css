@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  font-family: 'DM Sans', sans-serif;
+  color: #242a24;
+  background: #f5f2eb;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-optical-sizing: auto;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(
+      ellipse at 12% 0%,
+      rgb(223 231 204 / 72%),
+      transparent 34rem
+    ),
+    #f5f2eb;
+}
+
+button,
+input,
+select {
+  font: inherit;
+}
+
+.game-shell {
+  width: min(100% - 32px, 680px);
+  margin: 0 auto;
+  padding: 72px 0 32px;
+}
+
+.hero {
+  margin: 0 0 32px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: #5f7652;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 600;
+  letter-spacing: -0.07em;
+  line-height: 1;
+}
+
+.intro {
+  max-width: 540px;
+  margin: 18px 0 0;
+  color: #667064;
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.game-panel {
+  padding: clamp(22px, 5vw, 36px);
+  border: 1px solid #e2e4d8;
+  border-radius: 20px;
+  background: rgb(255 255 255 / 84%);
+  box-shadow: 0 16px 48px rgb(34 45 30 / 7%);
+}
+
+.settings {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.setup-form {
+  display: grid;
+  justify-items: start;
+  gap: 4px;
+}
+
+.setting select option:disabled {
+  color: #a1a79a;
+}
+
+.setting,
+.guess-label {
+  display: grid;
+  gap: 8px;
+  color: #667064;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.setting select,
+.guess-input {
+  width: 100%;
+  min-height: 48px;
+  padding: 0 13px;
+  border: 1px solid #dfe3d8;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+  color: #242a24;
+}
+
+.setting select:focus,
+.guess-input:focus {
+  border-color: #69845a;
+  box-shadow: 0 0 0 3px rgb(105 132 90 / 15%);
+}
+
+.button {
+  min-height: 48px;
+  padding: 0 18px;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  transition:
+    background 150ms ease,
+    transform 150ms ease;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button-primary {
+  background: #354e32;
+  color: #fff;
+}
+
+.button-primary:hover {
+  background: #263d24;
+}
+
+.button-secondary {
+  border: 1px solid #dfe3d8;
+  background: #f8f9f5;
+  color: #354e32;
+}
+
+.button-secondary:hover {
+  background: #edf1e8;
+}
+
+.game-meta,
+.game-prompt,
+.field-help,
+.leaderboard-caption,
+.empty-leaderboard {
+  color: #758070;
+  font-size: 0.85rem;
+}
+
+.game-meta {
+  margin: 20px 0;
+}
+
+.game-prompt {
+  margin: 20px 0 0;
+}
+
+.round-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 14px;
+  margin: 22px 0 12px;
+}
+
+.round-badge {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #edf1e8;
+  color: #40583a;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.round-info .game-meta {
+  margin: 0;
+}
+
+.round-timer {
+  margin: 0 0 22px;
+  color: #354e32;
+  font-family: 'DM Mono', monospace;
+  font-size: 1.5rem;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.guess-form {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 12px;
+}
+
+.guess-input {
+  font-family: 'DM Mono', monospace;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+}
+
+.field-help {
+  margin: 10px 0 0;
+}
+
+.feedback {
+  min-height: 1.3em;
+  margin: 8px 0 0;
+  color: #a64c38;
+  font-size: 0.85rem;
+}
+
+.win-message {
+  margin: 24px 0 6px;
+  color: #354e32;
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.win-time {
+  margin: 0;
+  color: #667064;
+  font-family: 'DM Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.new-game-button {
+  margin-bottom: 2px;
+}
+
+.history {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #e9ebe3;
+}
+
+.history h2 {
+  margin: 0 0 14px;
+  font-size: 1rem;
+}
+
+.guess-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.guess-table th,
+.guess-table td {
+  padding: 12px 8px;
+  border-bottom: 1px solid #eff0ec;
+  font-size: 0.9rem;
+}
+
+.guess-table thead th {
+  color: #788273;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.guess-code {
+  font-family: 'DM Mono', monospace;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+}
+
+.row-number {
+  color: #788273;
+  font-weight: 400;
+}
+
+.leaderboard {
+  margin-top: 30px;
+  padding-top: 24px;
+  border-top: 1px solid #e9ebe3;
+}
+
+.leaderboard h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.leaderboard-caption {
+  margin: 6px 0 14px;
+}
+
+.leaderboard-list {
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.leaderboard-entry {
+  display: grid;
+  grid-template-columns: 32px minmax(80px, 1fr) minmax(120px, 1.4fr) auto;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 12px;
+  border: 1px solid #eff0ec;
+  border-radius: 10px;
+  background: #fcfcfa;
+  font-size: 0.83rem;
+}
+
+.leaderboard-rank {
+  color: #7a8673;
+  font-family: 'DM Mono', monospace;
+  font-size: 0.75rem;
+}
+
+.leaderboard-score {
+  color: #354e32;
+  font-weight: 700;
+}
+
+.leaderboard-config {
+  color: #788273;
+  font-size: 0.75rem;
+}
+
+.leaderboard-time {
+  font-family: 'DM Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.empty-leaderboard {
+  margin: 0;
+}
+
+.storage-notice {
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fff3e8;
+  color: #8d4b28;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.footer {
+  padding: 22px 0;
+  color: #899184;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+@media (max-width: 520px) {
+  .game-shell {
+    padding-top: 44px;
+  }
+
+  .settings {
+    grid-template-columns: 1fr;
+  }
+
+  .guess-form {
+    grid-template-columns: 1fr;
+  }
+
+  .leaderboard-entry {
+    grid-template-columns: 26px 1fr auto;
+  }
+
+  .leaderboard-config {
+    grid-column: 2;
+  }
+
+  .leaderboard-time {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+  }
+}
