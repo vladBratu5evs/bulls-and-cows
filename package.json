@@ -6,6 +6,7 @@
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest",
+    "build": "tsc -p tsconfig.app.json",
     "prepare": "husky",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
